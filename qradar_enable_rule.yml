@@ -1,0 +1,21 @@
+---
+- name: Enable QRadar Rule to Trigger an Offense
+  hosts: siem
+  collections:
+    - ibm.qradar
+
+  tasks:
+    - name: Get Rule ID for 'Ansible Workshop DDoS Rule'
+      qradar_rule_info:
+        name: "Ansible Workshop DDOS Rule"
+      register: qrule_info
+
+    - debug:
+        var: qrule_info
+
+    - name: Enable Rule 'Ansible Workshop DDoS Rule'
+      qradar_rule:
+        id: "{{ qrule_info['rules'][0]['id'] }}"
+        state: enabled
+
+
