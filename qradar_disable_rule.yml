@@ -1,6 +1,6 @@
 ---
 - name: Disable QRadar Rule to Trigger an Offense
-  hosts: all
+  hosts: qradar
   collections:
     - ibm.qradar
 
