@@ -1,5 +1,5 @@
 ---
-- name: Whitelist attacker
+- name: Blacklist attacker
   hosts: checkpoint
 
   vars:
@@ -33,3 +33,8 @@
         policy_package: standard
         install_on_all_cluster_members_or_fail: yes
       failed_when: false
+
+    - name: "Store Annotation Note"
+      set_stats:
+        data:
+          qradar_offense_annotation_note_text:  "Blacklist attacker for information gathering"

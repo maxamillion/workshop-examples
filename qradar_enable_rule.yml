@@ -18,4 +18,8 @@
         id: "{{ qrule_info['rules'][0]['id'] }}"
         state: enabled
 
+    - name: "Store Annotation Note"
+      set_stats:
+        data:
+          qradar_offense_annotation_note_text:  "Enable Ansible Workshop DDoS Rule"
 

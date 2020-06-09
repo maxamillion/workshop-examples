@@ -36,3 +36,8 @@
         syslog_server: "{{ hostvars['qradar']['private_ip'] }}"
         checkpoint_server_name: "{{ object_data.json.objects | selectattr('type', 'match', 'CpmiHostCkp')|map(attribute='name')|join(',') }}"
         firewall_provider: checkpoint
+
+    - name: "Store Annotation Note"
+      set_stats:
+        data:
+          qradar_offense_annotation_note_text:  "Configure Check Point to send logs to QRadar"

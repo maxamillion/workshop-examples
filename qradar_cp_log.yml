@@ -17,3 +17,8 @@
       qradar_deploy:
         type: INCREMENTAL
       failed_when: false
+
+    - name: "Store Annotation Note"
+      set_stats:
+        data:
+          qradar_offense_annotation_note_text:  "Add CheckPoint log source to QRadar"

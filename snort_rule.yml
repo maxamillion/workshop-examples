@@ -18,3 +18,9 @@
         ids_rule: "{{ tower_snort_rule }}"
         ids_rules_file: '/etc/snort/rules/local.rules'
         ids_rule_state: present
+
+
+    - name: "Store Annotation Note"
+      set_stats:
+        data:
+          qradar_offense_annotation_note_text:  "Enable snort rule {{ tower_snort_rule }}"
