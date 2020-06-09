@@ -1,0 +1,13 @@
+---
+- name: Add QRadar Offense Note
+  hosts: all
+  collections:
+    - ibm.qradar
+
+  tasks:
+    - name: Add note to Offense ID "{{ qradar_offense_note_id }}"
+      qradar_offense_note:
+        id: "{{ qradar_offense_note_id }}"
+        note_text: "Ansible Job ID: {{ tower_job_id }} :: {{ qradar_offense_note_text }}"
+
+

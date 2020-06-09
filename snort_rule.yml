@@ -23,4 +23,4 @@
     - name: "Store Annotation Note"
       set_stats:
         data:
-          qradar_offense_annotation_note_text:  "Enable snort rule {{ tower_snort_rule }}"
+          qradar_offense_note_text:  "Enable snort rule {{ tower_snort_rule }}"
