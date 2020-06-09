@@ -1,6 +1,6 @@
 ---
 - name: Enable QRadar Rule to Trigger an Offense
-  hosts: qradar
+  hosts: all
   collections:
     - ibm.qradar
 
