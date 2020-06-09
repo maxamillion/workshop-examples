@@ -5,15 +5,15 @@
     - ibm.qradar
 
   tasks:
-    - name: Get Rule ID for "{{ qradar_rule_name }}"
+    - name: Get Rule ID for 'Ansible Workshop DDoS Rule'
       qradar_rule_info:
-        name: "{{ qradar_rule_name }}"
+        name: "Ansible Workshop DDOS Rule"
       register: qrule_info
 
     - debug:
         var: qrule_info
 
-    - name: Enable Rule "{{ qradar_rule_name }}"
+    - name: Enable Rule 'Ansible Workshop DDoS Rule'
       qradar_rule:
         id: "{{ qrule_info['rules'][0]['id'] }}"
         state: enabled
