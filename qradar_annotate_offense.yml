@@ -1,0 +1,12 @@
+---
+- name: Add annotation
+  hosts: all
+  collections:
+    - ibm.qradar
+
+  tasks:
+    - name: Add annotation note to Offense ID "{{ qradar_offense_annotation_id }}"
+      qradar_offense_note:
+        note_text: "{{ qradar_offense_annotation }}"
+
+
