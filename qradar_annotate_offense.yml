@@ -7,6 +7,7 @@
   tasks:
     - name: Add annotation note to Offense ID "{{ qradar_offense_annotation_id }}"
       qradar_offense_note:
+        id: "{{ qradar_offense_annotation_id }}"
         note_text: "{{ qradar_offense_annotation_note_text }}"
 
 
